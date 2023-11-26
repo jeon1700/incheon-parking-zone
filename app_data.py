@@ -11,11 +11,11 @@ def data_app():
     
 
     if st.checkbox('통계데이터') :
-        st.dataframe(df.describe())
+        st.dataframe(df)
     else :
         st.text('')
 
-    st.text('최대 / 최소 데이터 확인하기')
+
     column_list = df.columns[ 4 : ]
     selected_columns = st.selectbox('컬럼을 선택하세요', column_list)
 
