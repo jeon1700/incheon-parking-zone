@@ -10,24 +10,9 @@ def data_app():
     df = pd.read_csv('./data/incheon.csv')
     
 
-    if st.checkbox('통계데이터') :
+    if st.checkbox('데이터 표') :
         st.dataframe(df)
     else :
         st.text('')
 
-
-    column_list = df.columns[ 4 : ]
-    selected_columns = st.selectbox('컬럼을 선택하세요', column_list)
-
-    st.text(selected_columns + ' 컬럼의 최소값')
-    st.dataframe(df.loc[df[selected_columns] == df[selected_columns].min() , ])
-    st.text(selected_columns + ' 컬럼의 최대값')
-    st.dataframe(df.loc[df[selected_columns] == df[selected_columns].max() , ])
-
-    st.text(selected_columns + ' 컬럼의 히스토그램')
-
-    fig1 = plt.figure()
-    df[selected_columns].hist(bins = 20)
-    st.pyplot(fig1)    
-
-
+    
